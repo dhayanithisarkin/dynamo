@@ -18,7 +18,10 @@ public class DynamoTest {
                 .build();
 
         //saveItem();
+        //readItem();
+        deleteItem();
         readItem();
+
         client.shutdown();
     }
 
@@ -49,9 +52,11 @@ public class DynamoTest {
         }
     }
 
+    private static void deleteItem() {
+        InventoryItem item = new InventoryItem();
+        item.setCustomerOt("10000:515");
 
-
-
-
-
+        DynamoDBMapper mapper = new DynamoDBMapper(client);
+        mapper.delete(item);
+    }
 }
