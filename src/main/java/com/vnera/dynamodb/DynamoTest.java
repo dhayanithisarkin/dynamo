@@ -14,7 +14,8 @@ public class DynamoTest {
                 .withRegion(Regions.US_WEST_2)
                 .build();
 
-        saveItem();
+        //saveItem();
+        client.shutdown();
     }
 
     private static void saveItem() {

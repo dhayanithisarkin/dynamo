@@ -11,6 +11,7 @@ public class InventoryItem {
     private long oid;
     private String value;
 
+    // this is the partition key
     @DynamoDBHashKey(attributeName = "customer_ot")
     public String getCustomerOt() {
         return customerOt;
@@ -19,6 +20,7 @@ public class InventoryItem {
         this.customerOt = customerOt;
     }
 
+    // this is the sort key
     @DynamoDBRangeKey(attributeName = "oid")
     public long getOid() {
         return oid;
